@@ -1,24 +1,48 @@
 "use client";
 
-import Link from "next/link";
+// import Link from "next/link";
 import type { NextPage } from "next";
-import { useAccount } from "wagmi";
-import { BugAntIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import { Address } from "~~/components/scaffold-eth";
+
+// import { useAccount } from "wagmi";
+// import { BugAntIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+// import { Address } from "~~/components/scaffold-eth";
 
 const Home: NextPage = () => {
-  const { address: connectedAddress } = useAccount();
+  // const { address: connectedAddress } = useAccount();
 
   return (
     <>
-      <div className="flex items-center flex-col flex-grow pt-10">
-        <div className="px-5">
-          <h1 className="text-center">
-            <span className="block text-2xl mb-2">Welcome to</span>
-            <span className="block text-4xl font-bold">My dApp on Monad</span>
-            <br/>
-            <span className="block text-1xl font-bold">Gmonad</span>
-          </h1>
+      <div className="grid grid-cols-12 gap-x-4 mx-5 my-5">
+        <div className="col-span-6">Walllet Connection Status</div>
+        <div className="col-span-6">Network</div>
+        <div className="col-span-6">
+          <input type="text" placeholder="Not Connected!" className="input !input-error rounded-md w-full" disabled />
+        </div>
+        <div className="col-span-6">
+          <input type="text" placeholder="No Network" className="input !input-error rounded-md w-full" disabled />
+        </div>
+      </div>
+      <div className="grid grid-cols-12 gap-x-4 mx-5 my-5">
+        <div className="col-span-4">Wallet Address</div>
+        <div className="col-span-4">Monad Name Service</div>
+        <div className="col-span-4">Wallet Balance</div>
+        <div className="col-span-4">
+          <input type="text" placeholder="0x" className="input !input-error rounded-md w-full" disabled />
+        </div>
+        <div className="col-span-4">
+          <input type="text" placeholder="xxxxx.nad" className="input !input-error rounded-md w-full" disabled />
+        </div>
+        <div className="col-span-4">
+          <input type="text" placeholder="0 MON" className="input !input-error rounded-md w-full" disabled />
+        </div>
+      </div>
+      <div className="grid grid-cols-8 gap-x-4 mx-5 my-5">
+        <div className="col-span-4">Wallet NFT count</div>
+        <div className="col-span-4">
+          <button className="btn">Add Monad Network</button>
+        </div>
+        <div className="col-span-4">
+          <input type="text" placeholder="0 NFT" className="input !input-error rounded-md w-100" disabled />
         </div>
       </div>
     </>
