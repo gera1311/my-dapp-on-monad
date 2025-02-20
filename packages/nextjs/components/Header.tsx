@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useRef, useState } from "react";
+import React, { ReactNode, useCallback, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -10,14 +10,23 @@ import { FaucetButton, RainbowKitCustomConnectButton } from "~~/components/scaff
 import { useOutsideClick, useTargetNetwork } from "~~/hooks/scaffold-eth";
 
 type HeaderMenuLink = {
-  label: string;
+  label: ReactNode;
   href: string;
   icon?: React.ReactNode;
 };
 
 export const menuLinks: HeaderMenuLink[] = [
   {
-    label: "Profile",
+    label: (
+      <div className="flex items-center gap-2">
+        <div className="avatar">
+          <div className="w-8 h-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+            <img src="/avatar.jpg" alt="Profile Avatar" />
+          </div>
+        </div>
+        <span>Profile</span>
+      </div>
+    ),
     href: "/",
   },
 ];

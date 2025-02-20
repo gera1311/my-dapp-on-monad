@@ -1,10 +1,11 @@
 import React from "react";
 import Link from "next/link";
+import CountdownTimer from "./CountdownTimer";
 import { hardhat } from "viem/chains";
 import { CurrencyDollarIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { HeartIcon } from "@heroicons/react/24/outline";
 import { SwitchTheme } from "~~/components/SwitchTheme";
-import { BuidlGuidlLogo } from "~~/components/assets/BuidlGuidlLogo";
+// import { BuidlGuidlLogo } from "~~/components/assets/BuidlGuidlLogo";
 import { Faucet } from "~~/components/scaffold-eth";
 import { useTargetNetwork } from "~~/hooks/scaffold-eth/useTargetNetwork";
 import { useGlobalState } from "~~/services/store/store";
@@ -46,15 +47,18 @@ export const Footer = () => {
       <div className="w-full">
         <ul className="menu menu-horizontal w-full">
           <div className="flex justify-center items-center gap-2 text-sm w-full">
-
             <span>·</span>
             <div className="flex justify-center items-center gap-2">
               <p className="m-0 text-center">
                 Built with <HeartIcon className="inline-block h-4 w-4" /> at
               </p>
               nad power!
+              <span>·</span>
             </div>
-            <span>·</span>
+            <span className="text-lg font-semibold text-primary dark:text-white">Until Mainnet Launch</span>
+            <div>
+              <CountdownTimer />
+            </div>
           </div>
         </ul>
       </div>
